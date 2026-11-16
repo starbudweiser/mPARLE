@@ -1,0 +1,60 @@
+<!doctype html><html lang="fr"><meta charset="utf-8"><title>mPARLE — maquettes</title>
+<style>
+:root{--ac:#ff6b4a;--ac2:#ffe2da;--bg:#f5f1ea;--card:#fff;--tx:#2b2622;--mu:#8a8178;--ln:#eadfd2;--ok:#3bb58a;--bl:#4a7dff}
+*{box-sizing:border-box}body{margin:0;background:#e9e3d8;font:14px -apple-system,Helvetica,sans-serif;color:var(--tx);padding:32px}
+h2{margin:36px 0 12px;font-size:15px;color:#6b5f4d}h1{font-size:22px;margin:0}
+.row{display:flex;gap:28px;flex-wrap:wrap;align-items:flex-start}
+.m{color:var(--ac);font-weight:700}
+.desk{background:linear-gradient(135deg,#cfd9e8,#e8d8e0);border-radius:18px;padding:28px;width:560px;height:330px;position:relative}
+.doc{background:#fff;border-radius:12px;padding:18px;width:360px;font-size:13px;line-height:1.6;color:#444}
+.sel{background:#bcd3ff}
+.bubble{position:absolute;left:150px;top:150px;width:330px;background:var(--card);border-radius:22px;padding:14px 16px;box-shadow:0 12px 32px rgba(60,40,20,.22)}
+.top{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--mu);margin-bottom:8px}
+.pill{background:var(--ac2);color:#c4381b;border-radius:14px;padding:3px 10px;font-weight:600;font-size:12px}
+.pill.g{background:#e2f6ee;color:#1d8a64}
+.txt{font-size:15px;line-height:1.45}
+.act{display:flex;gap:6px;margin-top:12px;flex-wrap:wrap}
+.btn{border:0;border-radius:14px;padding:6px 12px;font-size:12px;background:#f1ebe2;color:var(--tx)}
+.btn.p{background:var(--ac);color:#fff;font-weight:600}
+.win{background:var(--bg);border-radius:20px;width:560px;padding:18px;box-shadow:0 10px 28px rgba(0,0,0,.15)}
+.dots{display:flex;gap:6px;margin-bottom:12px}.dots i{width:11px;height:11px;border-radius:50%;background:#ff5f57}.dots i:nth-child(2){background:#febc2e}.dots i:nth-child(3){background:#28c840}
+.lang{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.sw{background:var(--card);border-radius:16px;padding:8px 14px;font-weight:600;flex:1;text-align:center}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.box{background:var(--card);border-radius:18px;padding:14px;min-height:120px;font-size:15px;line-height:1.5}
+.box small{display:block;color:var(--mu);font-size:11px;margin-bottom:6px}
+.set .r{display:flex;justify-content:space-between;align-items:center;background:var(--card);border-radius:16px;padding:12px 14px;margin-bottom:8px}
+.set .r span{color:var(--mu);font-size:12px;display:block}
+.tg{width:38px;height:22px;border-radius:12px;background:var(--ac);position:relative}.tg:after{content:"";position:absolute;right:3px;top:3px;width:16px;height:16px;border-radius:50%;background:#fff}
+.tg.off{background:#d8d0c4}.tg.off:after{right:auto;left:3px}
+.kbd{background:#f1ebe2;border-radius:10px;padding:4px 10px;font-weight:600}
+.menu{background:var(--card);border-radius:18px;width:250px;padding:10px;box-shadow:0 10px 28px rgba(0,0,0,.18)}
+.menu div{padding:8px 10px;border-radius:12px;font-size:13px;display:flex;justify-content:space-between}.menu div:first-child{background:var(--ac2)}
+</style>
+<h1><span class="m">m</span>PARLE — maquettes (Flat Round Design, clair)</h1>
+
+<h2>1. Bulle de traduction — raccourci ⌥T sur n'importe quelle sélection</h2>
+<div class="desk"><div class="doc">The quick brown fox <span class="sel">jumps over the lazy dog and keeps running through the forest.</span> Nothing could stop it now.</div>
+<div class="bubble"><div class="top"><span class="pill g">Auto · EN</span>→<span class="pill">Français</span><span style="margin-left:auto">Apple · 0,2 s</span></div>
+<div class="txt">Le renard saute par-dessus le chien paresseux et continue de courir dans la forêt.</div>
+<div class="act"><button class="btn p">Remplacer</button><button class="btn">Copier</button><button class="btn">Écouter</button><button class="btn">Meilleure qualité ✦</button></div></div></div>
+
+<h2>2. Fenêtre de saisie rapide (⌥⇧T ou icône de la barre de menus)</h2>
+<div class="win"><div class="dots"><i></i><i></i><i></i></div>
+<div class="lang"><div class="sw">Détecter la langue</div>⇄<div class="sw">Français</div></div>
+<div class="two"><div class="box"><small>Texte source</small>Where is the nearest train station?</div>
+<div class="box"><small>Traduction · Apple (local)</small>Où est la gare la plus proche ?<div class="act"><button class="btn">Copier</button><button class="btn">Écouter</button></div></div></div></div>
+
+<h2>3. Menu de la barre de menus</h2>
+<div class="menu"><div>Traduire la sélection <span class="kbd">⌥T</span></div><div>Saisie rapide <span class="kbd">⌥⇧T</span></div><div>Historique</div><div>Réglages…</div><div>À propos de mPARLE</div><div>Quitter mPARLE</div></div>
+
+<h2>4. Réglages</h2>
+<div class="win set"><div class="dots"><i></i><i></i><i></i></div>
+<div class="r"><div>Langue cible par défaut<span>Langues du système proposées</span></div><div class="pill">Français</div></div>
+<div class="r"><div>Moteur<span>Apple local d'abord, qualité sur demande</span></div><div class="pill g">Hybride</div></div>
+<div class="r"><div>Moteur « qualité »<span>DeepL gratuit (clé API) · LLM local · Google</span></div><div class="pill">DeepL</div></div>
+<div class="r"><div>Raccourci traduction<span>Fonctionne dans toutes les applis</span></div><div class="kbd">⌥T</div></div>
+<div class="r"><div>Remplacer le texte en place<span>Dans les champs modifiables</span></div><div class="tg"></div></div>
+<div class="r"><div>Historique des traductions<span>Local, effaçable</span></div><div class="tg off"></div></div>
+<div class="r"><div>Mises à jour automatiques<span>Recherche quotidienne</span></div><div class="tg"></div></div></div>
+</html>
