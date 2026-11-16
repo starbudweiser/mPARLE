@@ -2,31 +2,62 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>CFBundleDevelopmentRegion</key><string>en</string>
-	<key>CFBundleDisplayName</key><string>mPARLE</string>
-	<key>CFBundleExecutable</key><string>mPARLE</string>
-	<key>CFBundleIconFile</key><string>AppIcon</string>
-	<key>CFBundleIdentifier</key><string>fr.stephan.mparle</string>
-	<key>CFBundleLocalizations</key><array><string>fr</string><string>en</string><string>es</string><string>it</string></array>
-	<key>CFBundleName</key><string>mPARLE</string>
-	<key>CFBundlePackageType</key><string>APPL</string>
-	<key>CFBundleShortVersionString</key><string>0.1.0</string>
-	<key>CFBundleVersion</key><string>1</string>
-	<key>LSApplicationCategoryType</key><string>public.app-category.utilities</string>
-	<key>LSMinimumSystemVersion</key><string>26.0</string>
-	<key>LSUIElement</key><true/>
-	<key>NSHighResolutionCapable</key><true/>
-	<key>NSPrincipalClass</key><string>NSApplication</string>
-	<key>NSSupportsAutomaticTermination</key><false/>
-	<key>NSSupportsSuddenTermination</key><false/>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>en</string>
+	<key>CFBundleDisplayName</key>
+	<string>mPARLE</string>
+	<key>CFBundleExecutable</key>
+	<string>mPARLE</string>
+	<key>CFBundleIconFile</key>
+	<string>AppIcon</string>
+	<key>CFBundleIdentifier</key>
+	<string>fr.stephan.mparle</string>
+	<key>CFBundleLocalizations</key>
+	<array>
+		<string>fr</string>
+		<string>en</string>
+		<string>es</string>
+		<string>it</string>
+	</array>
+	<key>CFBundleName</key>
+	<string>mPARLE</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>0.1.1</string>
+	<key>CFBundleVersion</key>
+	<string>2</string>
+	<key>LSApplicationCategoryType</key>
+	<string>public.app-category.utilities</string>
+	<key>LSMinimumSystemVersion</key>
+	<string>26.0</string>
+	<key>LSUIElement</key>
+	<true/>
+	<key>NSHighResolutionCapable</key>
+	<true/>
+	<key>NSPrincipalClass</key>
+	<string>NSApplication</string>
 	<key>NSServices</key>
 	<array>
 		<dict>
-			<key>NSMenuItem</key><dict><key>default</key><string>Traduire avec mPARLE</string></dict>
-			<key>NSMessage</key><string>translateService</string>
-			<key>NSPortName</key><string>mPARLE</string>
-			<key>NSSendTypes</key><array><string>NSStringPboardType</string></array>
+			<key>NSMenuItem</key>
+			<dict>
+				<key>default</key>
+				<string>Traduire avec mPARLE</string>
+			</dict>
+			<key>NSMessage</key>
+			<string>translateService</string>
+			<key>NSPortName</key>
+			<string>mPARLE</string>
+			<key>NSSendTypes</key>
+			<array>
+				<string>NSStringPboardType</string>
+			</array>
 		</dict>
 	</array>
+	<key>NSSupportsAutomaticTermination</key>
+	<false/>
+	<key>NSSupportsSuddenTermination</key>
+	<false/>
 </dict>
 </plist>
