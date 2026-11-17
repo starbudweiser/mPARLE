@@ -7,3 +7,11 @@
 - Quick input window (⌥⇧T), macOS Services entry, optional history.
 - Engines: Apple Translation (local, offline, default), Google, DeepL (free API key), or a local model (OpenAI-compatible server such as Ollama).
 - 4 interface languages (fr, en, es, it), light and dark, automatic updates. Requires macOS 26.
+
+## Screenshots
+
+![Translation bubble](screenshots/bubble.png)
+
+![Quick input window](screenshots/quick-input.png)
+
+![Settings](screenshots/settings.png)
