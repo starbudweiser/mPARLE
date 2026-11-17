@@ -99,7 +99,7 @@ struct Pill: View {
 struct RoundButton: ButtonStyle {
     var primary = false
     func makeBody(configuration c: Configuration) -> some View {
-        c.label.font(.system(size: 12, weight: primary ? .semibold : .regular))
+        c.label.font(.system(size: 12, weight: primary ? .semibold : .regular)).lineLimit(1).fixedSize()
             .padding(.horizontal, 12).padding(.vertical, 6)
             .background(primary ? Theme.accent : Theme.chip, in: Capsule())
             .foregroundStyle(primary ? Color.white : Theme.text)

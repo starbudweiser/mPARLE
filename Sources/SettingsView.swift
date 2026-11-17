@@ -62,7 +62,7 @@ struct SettingsView: View {
                     Text(L.t("set.packs")).font(.system(size: 14, weight: .semibold))
                     Text(L.t("set.packs.sub")).font(.system(size: 12)).foregroundStyle(Theme.muted)
                     HStack { langPicker($packFrom); Image(systemName: "arrow.right"); langPicker($packTo)
-                        Button(L.t("set.packs.dl")) { packStatus = ""; packConfig = .init(source: .init(identifier: packFrom), target: .init(identifier: packTo)) }.buttonStyle(RoundButton(primary: true)).fixedSize()
+                        Button(L.t("set.packs.dl")) { packStatus = ""; packConfig = .init(source: .init(identifier: packFrom), target: .init(identifier: packTo)) }.buttonStyle(RoundButton(primary: true))
                         Spacer(minLength: 0) }
                     if !packStatus.isEmpty { Text(packStatus).font(.system(size: 12)).foregroundStyle(Theme.muted) }
                 }.padding(14).frame(maxWidth: .infinity, alignment: .leading).background(Theme.card, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
