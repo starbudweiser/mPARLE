@@ -33,6 +33,16 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         Timer.scheduledTimer(withTimeInterval: 3600, repeats: true) { _ in Task { @MainActor in Updater.shared.tick() } }
         Task { @MainActor in Updater.shared.tick() }
         if !Selection.trusted() { _ = Selection.trusted(prompt: true) }
+        // Aide aux captures d'écran (variable d'environnement, sans effet en usage normal) : ouvre une fenêtre sans prendre le focus.
+        if let shot = ProcessInfo.processInfo.environment["MPARLE_SHOT"] {
+            switch shot {
+            case "quick": showQuick()
+            case "settings": showSettings()
+            case "history": showHistory()
+            case "bubble": BubbleController.shared.show(text: ProcessInfo.processInfo.environment["MPARLE_DEMO_TEXT"] ?? "", editable: false)
+            default: break
+            }
+        }
     }
 
     func applicationShouldTerminateAfterLastWindowClosed(_ s: NSApplication) -> Bool { false }

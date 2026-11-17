@@ -10,6 +10,7 @@ final class QuickModel: ObservableObject {
     @Published var target = Prefs.target { didSet { schedule() } }
     @Published var info = ""
     private var task: Task<Void, Never>?
+    init() { if let t = ProcessInfo.processInfo.environment["MPARLE_DEMO_TEXT"] { input = t; schedule() } }
     func schedule() {
         task?.cancel()
         let text = input.trimmingCharacters(in: .whitespacesAndNewlines)

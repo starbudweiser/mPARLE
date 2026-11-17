@@ -42,6 +42,7 @@ enum BrandStyle {
 
 extension NSWindow {
     @MainActor func present() {
+        if ProcessInfo.processInfo.environment["MPARLE_SHOT"] != nil { orderFrontRegardless(); return }   // captures : sans prendre le focus
         NSApp.activate()
         orderFrontRegardless()
         makeKeyAndOrderFront(nil)
