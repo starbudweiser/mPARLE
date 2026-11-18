@@ -10,8 +10,8 @@
 
 ## Screenshots
 
-![Translation bubble](screenshots/bubble.png)
+![The mPARLE bubble next to the cursor, translating a French sentence into English with Apple's local engine, with Copy, Listen and Best quality buttons.](docs/bubble.png)
 
-![Quick input window](screenshots/quick-input.png)
+![The Quick input window translating a Spanish question into English.](docs/quick-input.png)
 
-![Settings](screenshots/settings.png)
+![The mPARLE settings: target and alternate languages, engines, DeepL key, shortcuts, replace in place and history.](docs/settings.png)
