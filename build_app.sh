@@ -12,6 +12,8 @@ swiftc -O -swift-version 5 -parse-as-library -target arm64-apple-macos26.0 -o "$
 
 [ -f assets/AppIcon.icns ] && cp assets/AppIcon.icns "$APP/Contents/Resources/AppIcon.icns"
 cp Resources/Info.plist "$APP/Contents/Info.plist"
+# Titre du Service « Traduire avec mPARLE » dans les 4 langues
+for l in fr en es it; do mkdir -p "$APP/Contents/Resources/$l.lproj"; cp "Resources/$l.lproj/InfoPlist.strings" "$APP/Contents/Resources/$l.lproj/InfoPlist.strings"; done
 /usr/libexec/PlistBuddy -c "Set :CFBundleIdentifier $ID" -c "Set :CFBundleDisplayName $NAME" -c "Set :CFBundleName $NAME" "$APP/Contents/Info.plist"
 if [ -n "${DEV:-}" ]; then /usr/libexec/PlistBuddy -c "Set :NSServices:0:NSMenuItem:default 'Traduire avec mPARLE DEV'" -c "Set :NSServices:0:NSPortName 'mPARLE DEV'" "$APP/Contents/Info.plist"; fi
 rm -rf build
