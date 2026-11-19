@@ -1,4 +1,13 @@
 import AppKit
+import SwiftUI
+
+/// Aplat de couleur dynamique (suit le thème clair/sombre de l'appli).
+private final class FillView: NSView {
+    let fill: NSColor
+    init(_ fill: NSColor) { self.fill = fill; super.init(frame: .zero) }
+    required init?(coder: NSCoder) { fatalError() }
+    override func draw(_ dirtyRect: NSRect) { fill.setFill(); dirtyRect.fill() }
+}
 
 @MainActor
 enum About {
@@ -14,7 +23,7 @@ enum About {
         let p = NSMutableParagraphStyle(); p.alignment = .center
         field.attributedStringValue = BrandStyle.colored(NSAttributedString(string: text, attributes: [
             .font: bold ? NSFont.boldSystemFont(ofSize: size) : NSFont.systemFont(ofSize: size), .paragraphStyle: p,
-            .foregroundColor: secondary ? NSColor.secondaryLabelColor : NSColor.labelColor]))
+            .foregroundColor: secondary ? NSColor(Theme.muted) : NSColor(Theme.text)]))
         field.alignment = .center; field.preferredMaxLayoutWidth = textWidth; field.isSelectable = false
         field.translatesAutoresizingMaskIntoConstraints = false
         field.widthAnchor.constraint(lessThanOrEqualToConstant: textWidth).isActive = true
@@ -37,10 +46,21 @@ enum About {
         stack.edgeInsets = NSEdgeInsets(top: 28, left: sideMargin, bottom: 28, right: sideMargin)
         stack.translatesAutoresizingMaskIntoConstraints = false
         stack.widthAnchor.constraint(equalToConstant: textWidth + 2 * sideMargin).isActive = true
-        let w = NSWindow(contentRect: .zero, styleMask: [.titled, .closable], backing: .buffered, defer: false)
+        let w = NSWindow(contentRect: .zero, styleMask: [.titled, .closable, .fullSizeContentView], backing: .buffered, defer: false)
         w.title = L.t("about.menu"); w.isReleasedWhenClosed = false
-        let content = NSView(); content.addSubview(stack)
-        NSLayoutConstraint.activate([stack.topAnchor.constraint(equalTo: content.topAnchor), stack.leadingAnchor.constraint(equalTo: content.leadingAnchor),
+        w.titlebarAppearsTransparent = true; w.titleVisibility = .hidden
+        w.standardWindowButton(.miniaturizeButton)?.isHidden = true; w.standardWindowButton(.zoomButton)?.isHidden = true
+        w.backgroundColor = NSColor(Theme.bg)
+        let content = FillView(NSColor(Theme.bg))
+        // Barre de titre façon Socle : 30 px de fond « carte », filet dessous
+        let bar = FillView(NSColor(Theme.card)); bar.translatesAutoresizingMaskIntoConstraints = false
+        let rule = FillView(NSColor(Theme.line)); rule.translatesAutoresizingMaskIntoConstraints = false
+        content.addSubview(stack); content.addSubview(bar); bar.addSubview(rule)
+        NSLayoutConstraint.activate([bar.topAnchor.constraint(equalTo: content.topAnchor), bar.leadingAnchor.constraint(equalTo: content.leadingAnchor),
+            bar.trailingAnchor.constraint(equalTo: content.trailingAnchor), bar.heightAnchor.constraint(equalToConstant: 30),
+            rule.leadingAnchor.constraint(equalTo: bar.leadingAnchor), rule.trailingAnchor.constraint(equalTo: bar.trailingAnchor),
+            rule.bottomAnchor.constraint(equalTo: bar.bottomAnchor), rule.heightAnchor.constraint(equalToConstant: 1),
+            stack.topAnchor.constraint(equalTo: bar.bottomAnchor), stack.leadingAnchor.constraint(equalTo: content.leadingAnchor),
             stack.trailingAnchor.constraint(equalTo: content.trailingAnchor), stack.bottomAnchor.constraint(equalTo: content.bottomAnchor)])
         w.contentView = content
         content.layoutSubtreeIfNeeded(); content.layoutSubtreeIfNeeded()
