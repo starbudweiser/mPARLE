@@ -15,3 +15,9 @@
 ![The Quick input window translating a Spanish question into English.](docs/quick-input.png)
 
 ![The mPARLE settings: target and alternate languages, engines, DeepL key, shortcuts, replace in place and history.](docs/settings.png)
+
+## Support / Soutenir
+
+This app is free. If it is useful to you, you can support the project (optional, no reward expected): [GitHub Sponsors](https://github.com/sponsors/starbudweiser).
+
+Cette appli est gratuite. Si elle vous est utile, vous pouvez soutenir le projet (facultatif, sans contrepartie) : [GitHub Sponsors](https://github.com/sponsors/starbudweiser).
