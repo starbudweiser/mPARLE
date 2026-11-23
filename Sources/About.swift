@@ -4,9 +4,11 @@ import SwiftUI
 /// Aplat de couleur dynamique (suit le thème clair/sombre de l'appli).
 private final class FillView: NSView {
     let fill: NSColor
-    init(_ fill: NSColor) { self.fill = fill; super.init(frame: .zero) }
+    init(_ fill: NSColor) { self.fill = fill; super.init(frame: .zero); wantsLayer = true }
     required init?(coder: NSCoder) { fatalError() }
-    override func draw(_ dirtyRect: NSRect) { fill.setFill(); dirtyRect.fill() }
+    override var wantsUpdateLayer: Bool { true }
+    override func updateLayer() { effectiveAppearance.performAsCurrentDrawingAppearance { layer?.backgroundColor = fill.cgColor } }
+    override func viewDidChangeEffectiveAppearance() { needsDisplay = true }
 }
 
 @MainActor

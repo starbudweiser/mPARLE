@@ -68,7 +68,7 @@ struct BrandText: View {
     }
 }
 
-// MARK: Thème « Flat Round Design » (clair / sombre)
+// MARK: Thème : couleurs Socle (neutres clair / sombre), accent corail de l'appli
 extension Color {
     init(light: UInt32, dark: UInt32) {
         func ns(_ h: UInt32) -> NSColor { NSColor(srgbRed: CGFloat((h >> 16) & 255) / 255, green: CGFloat((h >> 8) & 255) / 255, blue: CGFloat(h & 255) / 255, alpha: 1) }
@@ -76,17 +76,17 @@ extension Color {
     }
 }
 enum Theme {
-    static let bg = Color(light: 0xF5F1EA, dark: 0x1E1B18)
-    static let card = Color(light: 0xFFFFFF, dark: 0x2A2623)
-    static let chip = Color(light: 0xF1EBE2, dark: 0x3A3430)
-    static let text = Color(light: 0x2B2622, dark: 0xF2ECE4)
-    static let muted = Color(light: 0x8A8178, dark: 0x9A9088)
+    static let bg = Color(light: 0xF2F2F2, dark: 0x131316)
+    static let card = Color(light: 0xFFFFFF, dark: 0x1C1C1F)
+    static let chip = Color(light: 0xE6E6E6, dark: 0x2C2C31)
+    static let text = Color(light: 0x222222, dark: 0xF5F5F7)
+    static let muted = Color(light: 0x555555, dark: 0x98989F)
     static let accent = Color(light: 0xFF6B4A, dark: 0xFF6B4A)
-    static let accentSoft = Color(light: 0xFFE2DA, dark: 0x4A2A22)
+    static let accentSoft = Color(light: 0xFFE2DA, dark: 0x3A2420)
     static let accentText = Color(light: 0xC4381B, dark: 0xFF9A82)
     static let greenSoft = Color(light: 0xE2F6EE, dark: 0x1D3A2F)
     static let greenText = Color(light: 0x1D8A64, dark: 0x5FD6A6)
-    static let line = Color(light: 0xEADFD2, dark: 0x3A342F)
+    static let line = Color(light: 0xD4D4D4, dark: 0x303035)
 }
 
 struct Pill: View {
