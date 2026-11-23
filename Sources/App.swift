@@ -39,6 +39,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
             case "quick": showQuick()
             case "settings": showSettings()
             case "history": showHistory()
+            case "about": showAbout()
             case "bubble": BubbleController.shared.show(text: ProcessInfo.processInfo.environment["MPARLE_DEMO_TEXT"] ?? "", editable: false)
             default: break
             }
